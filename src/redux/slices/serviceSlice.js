@@ -30,7 +30,6 @@ export const serviceSlice = createSlice({
         state.status = 'loading';
       })
     builder.addCase(fetchServiceData.fulfilled, (state, action) => {
-        console.log(action);
         state.status = 'idle';
         state.allService.push(action.payload) ;
       });
