@@ -1,0 +1,64 @@
+.sign-form {
+	background-image: url('https://wallpaperaccess.com/full/2374143.jpg');
+	background-size: cover;
+	height: 657px;
+	width: 100%;
+}
+
+.signing-overlay {
+	background-color: rgba(0, 0, 0, 0.9);
+	height: 657px;
+	width: 100%;
+}
+
+.sign-form form input {
+	display: block;
+	margin: 14px auto;
+	width: 100%;
+	height: 38px;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #ccc;
+}
+
+.form-box {
+	background-color: #fff;
+	width: 480px;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.or-sign-with::after, .or-sign-with::before {
+	content: '';
+	display: inline-block;
+	border-bottom: 1px solid #ccc;
+	width: 200px;
+	padding: 5px;
+}
+
+.form-box .google-sign-btn {
+	border: none;
+	outline: none;
+	width: 100%;
+	border: 2px solid rgb(4, 77, 22);
+	border-radius: 10px;
+}
+
+.form-box .google-sign-btn img {
+	height: 30px;
+}
+
+.loginBtn {
+	color: #fff;
+	background-color: rgb(4, 77, 22);
+	padding: 6px 30px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	font-weight: 400;
+  }
+  
+  .loginBtn:hover {
+	background-color: rgb(4, 145, 39);
+  }
