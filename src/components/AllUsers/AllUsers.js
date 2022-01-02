@@ -8,7 +8,7 @@ const AllUsers = () => {
     useEffect(()=>{
         dispatch(fetchUsersData())
     },[])
-    const users = useSelector(state=>state.users.allUsers[0]);
+    const users = useSelector(state=>state?.users?.allUsers[0]);
 
     console.log(users);
 
@@ -16,7 +16,7 @@ const AllUsers = () => {
         <div>
             <h2>our all users</h2>
             {
-                users.map(user=><User user={user} key={user._id}></User>)
+                users?.map(user=><User user={user} key={user._id}></User>)
             }
         </div>
     );
