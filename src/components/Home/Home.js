@@ -1,12 +1,14 @@
 import React from "react";
-import Navbar from "../Shared/Navbar/Navbar";
+import Navigation from "../Shared/Navigation/Navigation";
+import Footer from "../Shared/Footer/Footer";
 import Header from "./Header/Header";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
+      <Navigation></Navigation>
       <Header />
+      <Footer />
     </div>
   );
 };

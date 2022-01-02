@@ -1,12 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="a">
+        <NavLink class="navbar-brand text-decoration-none text-dark" to="/">
           Navbar
-        </a>
+        </NavLink>
         <button
           class="navbar-toggler"
           type="button"
@@ -21,29 +22,42 @@ const Navbar = () => {
         <div class="collapse navbar-collapse " id="navbarNav">
           <ul class="navbar-nav text-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="h">
+              <NavLink
+                class="text-decoration-none text-dark px-2"
+                aria-current="page"
+                to="/"
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="h">
+              <NavLink
+                class="text-decoration-none text-dark px-2"
+                to="/services"
+              >
                 Services
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="h">
+              <NavLink class="text-decoration-none text-dark px-2" to="/about">
                 About
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="h">
+              <NavLink
+                class="text-decoration-none text-dark px-2"
+                to="/contact"
+              >
                 Contact
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="h">
+              <NavLink
+                class="text-decoration-none text-dark px-2"
+                to="/dashboard"
+              >
                 DashBoard
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
