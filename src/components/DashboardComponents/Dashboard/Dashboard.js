@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import DashboarSideNav from '../DashboarSideNav/DashboarSideNav';
+import "./dashboard.css"
+
+
 
 const Dashboard = () => {
+    const [navOpen,setNavOpen] = useState(false);
     return (
         <div>
-            <div style={{backgroundColor:"black", width:"200px", height:"100vh", color:"white", position:"fixed"}}>sidenav</div>
-            <div style={{marginLeft:"100vw-500px"}}>
-                <h1>outlet outtttttttttttttttttlet ouuuuuuuuuuuut</h1>
+            <div className={navOpen ? "dashboard-leftnav-container d-block" : 'dashboard-leftnav-container d-none d-md-block'}>
+                <div><DashboarSideNav></DashboarSideNav></div>
+            </div>
+            <div 
+            className={navOpen? "bg-black text-white toggle-icon rounded-end d-md-none": 'bg-black text-white rounded-end d-md-none'} style={{width:"25px"}} 
+            onClick={()=>setNavOpen(!navOpen)}
+            >{navOpen ? "X" : ">>" }</div>
+            <div className='outlet-container'>
                 <Outlet></Outlet>
             </div>
         </div>
