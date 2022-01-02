@@ -25,6 +25,7 @@ function App() {
         <Route path="/users" element={<AllUsers></AllUsers>}></Route>
         <Route path="/services" element={<Services></Services>}></Route>
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
+        <Route path="/user/:userId" element={<UserProfile></UserProfile>}></Route>
 
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
