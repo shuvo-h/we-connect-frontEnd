@@ -18,8 +18,8 @@ const Navbar = () => {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse me-auto" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav text-center">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="h">
                 Home
@@ -27,12 +27,22 @@ const Navbar = () => {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="h">
-                Features
+                Services
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="h">
-                Pricing
+                About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="h">
+                Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="h">
+                DashBoard
               </a>
             </li>
           </ul>
