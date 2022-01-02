@@ -8,6 +8,7 @@ import UserDashboard from "./components/DashboardComponents/UserDashboard/UserDa
 import AdminDashboard from "./components/DashboardComponents/AdminDashboard/AdminDashboard";
 import AllUsers from "./components/AllUsers/AllUsers";
 import ContactUs from "./components/ContactUs/ContactUs";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             element={<AdminDashboard></AdminDashboard>}
           ></Route>
         </Route>
+        <Route path="/user/:userId" element={<UserProfile></UserProfile>}></Route>
         <Route path="/users" element={<AllUsers></AllUsers>}></Route>
         <Route path="/services" element={<Services></Services>}></Route>
         <Route path="/contact" element={<ContactUs></ContactUs>}></Route>

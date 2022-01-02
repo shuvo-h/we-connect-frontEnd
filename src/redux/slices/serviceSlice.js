@@ -1,11 +1,19 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  allService: []
+  allService: [],
+  serviceHeilight: [],
 };
 
+// all services 
 export const fetchServiceData = createAsyncThunk("services/fetchServices", async()=>{
   const response = await fetch("http://localhost:5000/services")
+      .then(res=>res.json())
+  return response;
+})
+// setvice heighlight 
+export const fetchServiceHeighlight = createAsyncThunk("services/ServicesHeighlight", async()=>{
+  const response = await fetch("http://localhost:5000/serviceheighlight")
       .then(res=>res.json())
   return response;
 })
@@ -26,12 +34,22 @@ export const serviceSlice = createSlice({
   },
 
   extraReducers: (builder) => {
+    // push all services 
     builder.addCase(fetchServiceData.pending, (state) => {
         state.status = 'loading';
       })
     builder.addCase(fetchServiceData.fulfilled, (state, action) => {
         state.status = 'idle';
         state.allService.push(action.payload) ;
+      });
+
+      // push highlighted services 
+    builder.addCase(fetchServiceHeighlight.pending, (state) => {
+        state.status = 'loading';
+      })
+    builder.addCase(fetchServiceHeighlight.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.serviceHeilight.push(action.payload) ;
       });
   },
 });
