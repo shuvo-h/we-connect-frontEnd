@@ -26,7 +26,7 @@ const useFirebase = () => {
 				setUser(newUser);
 
 				// Save User to the Database
-				// saveUser(email, name, "", 'POST');
+				saveUser(email, name, "", 'POST');
 
 				// Send Name to Firebase after Creation
 				updateProfile(auth.currentUser, {
@@ -60,13 +60,12 @@ const useFirebase = () => {
 	}
 
 	// Email-Password LogIn Process
-	const loginUser = (email, password, location, navigate) => {
+	const loginUser = (email, password, navigate) => {
 		setIsLoading(true);
 
 		signInWithEmailAndPassword(auth, email, password)
 			.then((user) => {
-				const destination = location?.state?.from || '/';
-				navigate(destination);
+				navigate('/');
 				setAuthLoginError('');
 			})
 			.catch((error) => {
@@ -113,15 +112,14 @@ const useFirebase = () => {
 
 
 	// Google SignIn Process
-	const signInWithGoogle = (location, navigate) => {
+	const signInWithGoogle = (navigate) => {
 		setIsLoading(true);
 		signInWithPopup(auth, googleProvider)
 			.then((result) => {
 				const user = result.user;
-				console.log(user);
-				// saveUser(user.email, user.displayName, user?.photoURL, 'PUT');
-				const destination = location?.state?.from || '/';
-				navigate.replace(destination);
+				
+				saveUser(user.email, user.displayName, user?.photoURL, 'PUT');
+				navigate.replace('/');
 				setAuthGoogleError('');
 
 			}).catch((error) => {
@@ -154,7 +152,7 @@ const useFirebase = () => {
 		});
 	}
 
-	/* // Save User Data
+	// Save User Data
 	const saveUser = (email, displayName, image, method) => {
 		const user = { email, displayName, image };
 		fetch('https://natural-honey.herokuapp.com/users', {
@@ -165,7 +163,7 @@ const useFirebase = () => {
 			body: JSON.stringify(user)
 		})
 			.then()
-	} */
+	}
 
 	return {
 		user,
