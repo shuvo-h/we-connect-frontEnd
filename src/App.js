@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 
 import ContactUs from "./components/ContactUs/ContactUs";
 import UserProfile from "./components/UserProfile/UserProfile";
+import MyServices from "./components/DashboardComponents/UserDashboard/MyServices";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route path="user" element={<UserDashboard></UserDashboard>}></Route>
+          <Route path="myservice" element={<MyServices></MyServices>}></Route>
           <Route path="admin" element={<AdminDashboard></AdminDashboard>} ></Route>
         </Route>
         
