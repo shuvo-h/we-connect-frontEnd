@@ -1,20 +1,23 @@
-.dashboard-leftnav-container{
-    background-color:black;
-    width:200px; 
-    height: 100vh; 
-    color: white;
-    position: fixed;
+.dashboard-leftnav-container {
+  background-color: black;
+  width: 200px;
+  height: 100vh;
+  color: white;
+  position: fixed;
 }
-.outlet-container{
-    margin-left: 200px;
+.outlet-container {
+  margin-left: 200px;
 }
 
-.toggle-icon{
-    margin-left: 200px;
+.toggle-icon {
+  margin-left: 200px;
+}
+.custom-transition {
+  transition: 0.5s ease-in;
 }
 
 @media only screen and (max-width: 768px) {
-    .outlet-container{
-        margin-left: 15px;
-    }
+  .outlet-container {
+    margin-left: 15px;
   }
+}
