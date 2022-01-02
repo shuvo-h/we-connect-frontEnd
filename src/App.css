@@ -8,3 +8,15 @@
   background-color: rgb(68, 48, 48);
   color: white;
 }
+.input-form {
+  width: 50%;
+}
+.form-background {
+  background-color: #063d8038;
+  height: 90.6vh;
+}
+@media only screen and (max-width: 576px) {
+  .input-form {
+    width: 100%;
+  }
+}
