@@ -7,6 +7,8 @@ import Services from "./components/Services/Services/Services";
 // import Admin from './components/Dashboard/Admin/Admin/Admin';
 
 import AllUsers from "./components/AllUsers/AllUsers";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 
 function App() {
@@ -17,6 +19,9 @@ function App() {
           <Route path="/services" element={<Services></Services>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
+
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         
           {/* <Route path="/adminDashboard" element={<Admin />}></Route> */}
         </Routes>
