@@ -1,42 +1,42 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  allService: []
+  allUsers: []
 };
 
-export const fetchServiceData = createAsyncThunk("services/fetchServices", async()=>{
-  const response = await fetch("http://localhost:5000/services")
+export const fetchUsersData = createAsyncThunk("users/fetchUsers", async()=>{
+  const response = await fetch("http://localhost:5000/users")
       .then(res=>res.json())
   return response;
 })
 
-export const serviceSlice = createSlice({
-  name: 'services',
+export const usersSlice = createSlice({
+  name: 'allUsers',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    addService: (state,action) => {
+    addUser: (state,action) => {
       // state.value += 1;
       // console.log(action.payload);
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
-    removeService: (state, action) => {
+    deleteUser: (state, action) => {
       // state.value += action.payload;
     },
   },
 
   extraReducers: (builder) => {
-    builder.addCase(fetchServiceData.pending, (state) => {
+    builder.addCase(fetchUsersData.pending, (state) => {
         state.status = 'loading';
       })
-    builder.addCase(fetchServiceData.fulfilled, (state, action) => {
+    builder.addCase(fetchUsersData.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.allService.push(action.payload) ;
+        state.allUsers.push(action.payload) ;
       });
   },
 });
 
-export const { addService, removeService } = serviceSlice.actions;
+export const { addUser, deleteUser } = usersSlice.actions;
 
-export default serviceSlice.reducer;
+export default usersSlice.reducer;
 
