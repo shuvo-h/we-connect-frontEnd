@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from 'react-router-dom';
 import { Container, Nav, Navbar, } from 'react-bootstrap';
+import logo from "../../../Assets/we_connect_logo.png"
 
 const Navigation = () => {
 
@@ -19,7 +20,7 @@ const Navigation = () => {
         <div>
             <Navbar bg="light" expand="lg" className={(isSticky) ? "navbar  navbar-expand-lg navbar-dark bg-dark fixed-top" : "navbar  navbar-expand-lg navbar-light color text-dark"}>
                 <Container>
-                    {/* <Nav.Link as={NavLink} to="/home"><Navbar.Brand href="#home"> <img src={logo} alt="" /></Navbar.Brand></Nav.Link> */}
+                    <Nav.Link as={NavLink} to="/home"><Navbar.Brand href="#home"> <img src={logo} alt="" /></Navbar.Brand></Nav.Link>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

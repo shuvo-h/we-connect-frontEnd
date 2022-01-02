@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "../Shared/Navigation/Navigation";
+import Footer from "../Shared/Footer/Footer";
 import Header from "./Header/Header";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Navigation></Navigation>
       <Header />
+      <Footer />
     </div>
   );
 };

@@ -6,6 +6,8 @@ import Services from "./components/Services/Services/Services";
 import Dashboard from "./components/DashboardComponents/Dashboard/Dashboard";
 import UserDashboard from "./components/DashboardComponents/UserDashboard/UserDashboard";
 import AdminDashboard from "./components/DashboardComponents/AdminDashboard/AdminDashboard";
+import AllUsers from "./components/AllUsers/AllUsers";
+
 
 function App() {
   return (
@@ -15,9 +17,12 @@ function App() {
                 <Route path="user" element={<UserDashboard></UserDashboard>}></Route>
                 <Route path="admin" element={<AdminDashboard></AdminDashboard>}></Route>
             </Route>
+          <Route path="/users" element={<AllUsers></AllUsers>}></Route>
           <Route path="/services" element={<Services></Services>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
-          <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+        
+          {/* <Route path="/adminDashboard" element={<Admin />}></Route> */}
         </Routes>
       </Router>
   );
