@@ -124,7 +124,7 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
 
-        saveUser(user.email, user.displayName, user?.photoURL, "PUT");
+        saveUser({email:user.email, name:user.displayName, img:user?.photoURL});
         navigate("/");
         setAuthGoogleError("");
       })
@@ -162,13 +162,18 @@ const useFirebase = () => {
   // Save User Data
   const saveUser = (userInfo) => {
     // const user = { email, displayName, image };
-    fetch("https://natural-honey.herokuapp.com/users", {
+    fetch("http://localhost:5000/newuser", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(userInfo),
-    }).then();
+    }).then(res => res.json())
+		.then(data=>{
+			if (data.insertedId) {
+				alert("Registration Successfull!")
+			}
+		});
   };
 
   return {

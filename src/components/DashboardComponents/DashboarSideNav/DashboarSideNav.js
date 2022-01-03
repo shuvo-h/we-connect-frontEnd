@@ -11,11 +11,15 @@ const DashboarSideNav = () => {
         </li>
         <li>
           {" "}
-          <NavLink to="myservice">my service</NavLink>
+          <NavLink to="services/edit">All services</NavLink>
         </li>
         <li>
           {" "}
-          <NavLink to="myservice">my order</NavLink>
+          <NavLink to="users/edit">All Users</NavLink>
+        </li>
+        <li>
+          {" "}
+          <NavLink to="myOrder">my order</NavLink>
         </li>
         <li>
           {" "}

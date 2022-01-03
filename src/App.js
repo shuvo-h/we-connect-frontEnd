@@ -14,6 +14,8 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import UserProfile from "./components/UserProfile/UserProfile";
 import MyServices from "./components/DashboardComponents/UserDashboard/MyServices";
 import AuthProvider from "./context/AuthProvider";
+import AllServiceDashBoard from "./components/DashboardComponents/AllServiceDashBoard/AllServiceDashBoard";
+import AllUsersDashBoard from "./components/DashboardComponents/AllUsersDashBoard/AllUsersDashBoard";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="user" element={<UserDashboard></UserDashboard>}></Route>
             <Route path="myservice" element={<MyServices></MyServices>}></Route>
             <Route path="admin" element={<AdminDashboard></AdminDashboard>}></Route>
+            <Route path="services/edit" element={<AllServiceDashBoard></AllServiceDashBoard>}></Route>
+            <Route path="users/edit" element={<AllUsersDashBoard></AllUsersDashBoard>}></Route>
           </Route>
 
           <Route path="/users" element={<AllUsers></AllUsers>}></Route>
