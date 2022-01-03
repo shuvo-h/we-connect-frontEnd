@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import { fetchSingleUser } from "../../redux/slices/usersSlice";
 import "./UserProfile.css";
 
@@ -15,6 +16,7 @@ const UserProfile = () => {
   const userProfile = useSelector((state) => state.users.singleUser);
 
   const { img, name, address, area, bio } = userProfile;
+  const { user } = useAuth();
   console.log(userProfile);
 
   return (
@@ -32,6 +34,7 @@ const UserProfile = () => {
       <div className="profile-pic ms-5 text-center">
         <img className="img-fluid h-100" src={img} alt="" />
         <b>{name}</b>
+        <b>{user.email}</b>
       </div>
       <div className="row container mt-5">
         <div className="col-md-6 col-12">
