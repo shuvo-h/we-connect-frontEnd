@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./../../../Assets/we_connect_logo.svg"
 const Footer = () => {
   return (
-    <div className="pt-5 pb-3 footer">
+    <div className="pt-5 pb-3 footer bg-dark">
       <div className="row mx-auto container text-lg-start text-center text-md-center text-xm-center">
         <div className="col-lg-4 col-sm-12 mx-auto">
           <img
