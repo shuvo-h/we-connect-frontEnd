@@ -16,6 +16,8 @@ import MyServices from "./components/DashboardComponents/UserDashboard/MyService
 import AuthProvider from "./context/AuthProvider";
 import AllServiceDashBoard from "./components/DashboardComponents/AllServiceDashBoard/AllServiceDashBoard";
 import AllUsersDashBoard from "./components/DashboardComponents/AllUsersDashBoard/AllUsersDashBoard";
+import ProviverServiceCtg from "./components/ProviverServiceCtg/ProviverServiceCtg";
+import DashboardHome from "./components/DashboardComponents/DashboardHome/DashboardHome";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+            <Route path="my" element={<DashboardHome></DashboardHome>}></Route>
             <Route path="user" element={<UserDashboard></UserDashboard>}></Route>
             <Route path="myservice" element={<MyServices></MyServices>}></Route>
             <Route path="admin" element={<AdminDashboard></AdminDashboard>}></Route>
@@ -30,6 +33,7 @@ function App() {
             <Route path="users/edit" element={<AllUsersDashBoard></AllUsersDashBoard>}></Route>
           </Route>
 
+          <Route path="/services/chatagory" element={<ProviverServiceCtg></ProviverServiceCtg>}></Route>
           <Route path="/users" element={<AllUsers></AllUsers>}></Route>
           <Route path="/services" element={<Services></Services>}></Route>
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
