@@ -3,21 +3,36 @@ import { Link } from "react-router-dom";
 
 const User = ({ user }) => {
   const { name, img, bio, category, address, area, _id } = user;
+  const bioUpdated = bio.slice(0, 60);
   console.log(user);
   return (
     <div className="col-12 col-lg-4">
       <div class="card m-2 border-0 shadow">
-        <img
-          src={img}
-          class="rounded-circle h-50 w-50 mx-auto border mt-3"
-          alt="..."
-        />
+        <div className="mx-auto">
+          <img
+            src={img}
+            class="  border mt-3 rounded-circle"
+            height="150px"
+            width="150px"
+            alt="..."
+          />
+        </div>
         <div class="card-body">
           <h5 class="card-title">{name}</h5>
-          <p class="card-text">{bio}</p>
-          <p>{category}</p>
+          <p class="card-text">{bioUpdated}</p>
+          <div className="w-50 text-center  mx-auto">
+            <p
+              style={{
+                backgroundColor: "rgba(121, 121, 121, 0.5)",
+                color: "blue",
+              }}
+              className="fw-bold p-2 rounded-pill"
+            >
+              {category}
+            </p>
+          </div>
+          <p className="">{area}</p>
           <p>{address}</p>
-          <p>{area}</p>
           <Link to={`user/${_id}`} class="btn btn-primary">
             Profile
           </Link>
