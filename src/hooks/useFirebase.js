@@ -24,7 +24,7 @@ const useFirebase = () => {
 				setAuthSignUpError('');
 				const newUser = { email, displayName: name };
 				setUser(newUser);
-
+				console.log(userCredential);
 				// Save User to the Database
 				saveUser(email, name, "", 'POST');
 
@@ -113,6 +113,7 @@ const useFirebase = () => {
 
 	// Google SignIn Process
 	const signInWithGoogle = (navigate) => {
+		alert("going to goolge login")
 		setIsLoading(true);
 		signInWithPopup(auth, googleProvider)
 			.then((result) => {

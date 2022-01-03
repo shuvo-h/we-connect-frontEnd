@@ -7,9 +7,9 @@ import './Register.css';
 
 const Register = () => {
 	const [loginData, setLoginData] = useState([]);
-	// const { registerUser, isLoading, signInWithGoogle, authSignUpError, setAuthSignUpError, authSuccess, setAuthSuccess } = useAuth();
+	const { registerUser, isLoading, signInWithGoogle, authSignUpError, setAuthSignUpError, authSuccess, setAuthSuccess } = useAuth();
 	
-	const { registerUser, isLoading, signInWithGoogle, authSignUpError, setAuthSignUpError, authSuccess, setAuthSuccess } = useFirebase();
+	// const { registerUser, isLoading, signInWithGoogle, authSignUpError, setAuthSignUpError, authSuccess, setAuthSuccess } = useFirebase();
 	const [isVisible, setIsVisible] = React.useState(false);
 
 	useEffect(() => {
@@ -37,7 +37,7 @@ const Register = () => {
 		const newLoginData = { ...loginData };
 		newLoginData[field] = value;
 
-		console.log(newLoginData);
+		// console.log(newLoginData);
 		setLoginData(newLoginData);
 
 	}
@@ -109,8 +109,8 @@ const Register = () => {
 						<input type="text" name="name" placeholder="Your Name" required onBlur={handleOnBlur} />
 						<input type="email" name="email" placeholder="Your Email" required onBlur={handleOnBlur} />
 						<div className="d-flex gap-4">
-							<input type="password" name="password" placeholder="Password" required onBlur={handleOnBlur} />
-							<input type="password" name="confirmPassword" placeholder="Confirm Password" required onBlur={handleOnBlur} />
+							<input type="password" name="password" id='password' placeholder="Password" required onBlur={handleOnBlur} />
+							<input type="password" name="confirmPassword" id='confirmPassword' placeholder="Confirm Password" required onBlur={handleOnBlur} />
 						</div>
 
 						<button className="my-2 registerBtn w-100" type="submit">Create Account</button>
