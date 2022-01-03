@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const DashboarSideNav = () => {
-  
+  const { logOut } = useAuth();
+
   return (
     <div className="mt-5">
       <ul>
@@ -25,7 +27,7 @@ const DashboarSideNav = () => {
 
         <li>
           {" "}
-          <NavLink to="myservice">logout</NavLink>
+          <button onClick={logOut}>logout</button>
         </li>
       </ul>
     </div>
