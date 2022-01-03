@@ -5,7 +5,7 @@ import logo from "../../../Assets/we_connect_logo.svg";
 import useAuth from "../../../hooks/useAuth";
 
 const Navigation = () => {
-  const {user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
   const [isSticky, setSticky] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -49,7 +49,7 @@ const Navigation = () => {
                 Contact
               </Nav.Link>
               <Nav.Link as={NavLink} to="/users">
-                Users
+                Providers
               </Nav.Link>
               <Nav.Link as={NavLink} to="/dashboard">
                 Dashboard
@@ -58,11 +58,15 @@ const Navigation = () => {
               <Nav.Link as={NavLink} to="/about">
                 About
               </Nav.Link>
-              {
-                user.email ? <button onClick={logOut}>{`Logout(${user.displayName})`}</button> : <Nav.Link as={NavLink} to="/login">
-                login
-              </Nav.Link>
-              }
+              {user.email ? (
+                <button
+                  onClick={logOut}
+                >{`Logout(${user.displayName})`}</button>
+              ) : (
+                <Nav.Link as={NavLink} to="/login">
+                  login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
