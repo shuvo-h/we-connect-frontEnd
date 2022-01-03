@@ -21,7 +21,7 @@ const Dashboard = () => {
       <div
         className={
           navOpen
-            ? "custom-transition bg-black text-white toggle-icon rounded-end d-md-none"
+            ? " bg-black text-white toggle-icon rounded-end d-md-none"
             : " bg-black text-white rounded-end d-md-none"
         }
         style={{ width: "25px" }}
