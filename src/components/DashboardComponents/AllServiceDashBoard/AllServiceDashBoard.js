@@ -18,8 +18,6 @@ const AllServiceDashBoard = () => {
       <AddSerevicesModal />
 
       <div>
-
-
         < div className="container my-order-container custom-body" >
           <div className="text-center pb-3">
             <h1 className="mb-5 text-center pt-5">All Services <span className="text-danger"> {services?.length}</span></h1>
