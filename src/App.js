@@ -18,6 +18,8 @@ import AllServiceDashBoard from "./components/DashboardComponents/AllServiceDash
 import AllUsersDashBoard from "./components/DashboardComponents/AllUsersDashBoard/AllUsersDashBoard";
 import ProviverServiceCtg from "./components/ProviverServiceCtg/ProviverServiceCtg";
 import DashboardHome from "./components/DashboardComponents/DashboardHome/DashboardHome";
+import NotFound from "./components/NotFound/NotFound";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -38,6 +40,9 @@ function App() {
           <Route path="/services" element={<Services></Services>}></Route>
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
           <Route path="users/user/:userId" element={<UserProfile></UserProfile>} ></Route>
+
+          <Route path="/*" element={<NotFound></NotFound>}></Route>
+          <Route path="/about" element={<About></About>}></Route>
 
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
