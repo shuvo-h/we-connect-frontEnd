@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   allUsers: [],
-  singleUser: {}
+  singleUser: {},
+  categorizedUser: []
 };
 
 // get all user from database 
@@ -15,6 +16,13 @@ export const fetchUsersData = createAsyncThunk("users/fetchUsers", async()=>{
 // get single user from database 
 export const fetchSingleUser = createAsyncThunk("users/fetchUser", async(id)=>{
   const response = await fetch(`http://localhost:5000/users/${id}`)
+      .then(res=>res.json())
+  return response;
+})
+
+// get users by category from database 
+export const fetchUsersCategory = createAsyncThunk("users/fetchCategorizedUser", async(categoryName)=>{
+  const response = await fetch(`http://localhost:5000/users/category/${categoryName}`)
       .then(res=>res.json())
   return response;
 })
@@ -50,6 +58,14 @@ export const usersSlice = createSlice({
     builder.addCase(fetchSingleUser.fulfilled, (state, action) => {
         state.status = 'idle';
         state.singleUser = action.payload;
+      });
+      // for  users based on category
+    builder.addCase(fetchUsersCategory.pending, (state) => {
+        state.status = 'loading';
+      })
+    builder.addCase(fetchUsersCategory.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.categorizedUser.push(action.payload) ;
       });
   },
 });

@@ -33,7 +33,7 @@ function App() {
             <Route path="users/edit" element={<AllUsersDashBoard></AllUsersDashBoard>}></Route>
           </Route>
 
-          <Route path="/services/chatagory" element={<ProviverServiceCtg></ProviverServiceCtg>}></Route>
+          <Route path="/services/:categoryName" element={<ProviverServiceCtg></ProviverServiceCtg>}></Route>
           <Route path="/users" element={<AllUsers></AllUsers>}></Route>
           <Route path="/services" element={<Services></Services>}></Route>
           <Route path="/contact" element={<ContactUs></ContactUs>}></Route>
