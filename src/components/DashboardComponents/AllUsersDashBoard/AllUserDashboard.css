@@ -46,7 +46,7 @@
 		.my-order-container td:nth-of-type(2):before { content: "Email"; }
 		.my-order-container td:nth-of-type(3):before { content: "Image"; }
 		.my-order-container td:nth-of-type(4):before { content: "Category";}
-		.my-order-container td:nth-of-type(5):before { content: "Status"; }
+		.my-order-container td:nth-of-type(5):before { content: "Address"; }
 		.my-order-container td:nth-of-type(6):before { content: "Action"; }
 
     }
