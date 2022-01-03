@@ -48,7 +48,7 @@ const AllUsersDashBoard = () => {
                             <tr role="row" style={{ border: "2px solid gray" }} >
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td><img style={{ width: "70px", height: "50px" }} src='https://www.clearchoiceuk.com/storage/2018/08/qualities-and-skills-of-a-commercial-cleaner.jpg' alt="" /></td>
+                                <td><img style={{ width: "70px", height: "50px" }} src={user.img} alt="" /></td>
                                 <td>{user.category}</td>
                                 <td>{user.area}</td>
                                 <td> <button
