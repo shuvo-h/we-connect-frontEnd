@@ -14,8 +14,6 @@ const ProviverServiceCtg = () => {
     (state) => state?.users.categorizedUser[0]
   );
 
-  //   console.log(categorizedUsers);
-
   return (
     <div>
       <h3 className="text-center my-5 fw-bold">These people gives this category services </h3>

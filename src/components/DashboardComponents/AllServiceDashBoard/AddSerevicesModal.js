@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 const AddSerevicesModal = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
     reset();
   };
   return (

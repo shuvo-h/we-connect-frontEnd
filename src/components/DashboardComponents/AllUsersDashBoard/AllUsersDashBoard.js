@@ -11,19 +11,20 @@ const AllUsersDashBoard = () => {
 
     const allUsers = useSelector((state) => state?.users?.allUsers[0]);
 
-    console.log(allUsers);
-
     const handleDelete = id =>{
-        fetch(`http://localhost:5000/users/${id}`,{
-          method:"DELETE"
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          if (data.deletedCount) {
-            alert("The User is deleted successfully!");
-            window.location.reload();
-          };
-        })
+        const confirm = window.confirm("Are you sure to delete this user? ");
+        if (confirm) {
+            fetch(`http://localhost:5000/users/${id}`,{
+              method:"DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+              if (data.deletedCount) {
+                alert("The User is deleted successfully!");
+                window.location.reload();
+              };
+            })
+        }
       }
 
     return (

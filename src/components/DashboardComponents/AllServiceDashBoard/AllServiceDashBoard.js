@@ -12,19 +12,23 @@ const AllServiceDashBoard = () => {
   }, []);
 
   const services = useSelector((state) => state?.service?.allService[0]);
-  console.log(services);
+  
   const handleDelete = id =>{
-    fetch(`http://localhost:5000/services/${id}`,{
-      method:"DELETE"
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      if (data.deletedCount) {
-        alert("The service is deleted successfully!");
-        window.location.reload();
-      };
-    })
+    const confirm = window.confirm("Are you sure to delete this service? ")
+    if (confirm) {
+      fetch(`http://localhost:5000/services/${id}`,{
+        method:"DELETE"
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        if (data.deletedCount) {
+          alert("The service is deleted successfully!");
+          window.location.reload();
+        };
+      })
+    }
   }
+
   return (
     <div>
       <AddSerevicesModal />
@@ -51,10 +55,10 @@ const AllServiceDashBoard = () => {
                 <tr role="row" style={{ border: "2px solid gray" }} >
                   <td><img style={{ width: "70px", height: "50px" }} src={service.service_banner} alt="" /></td>
                   <td>{service.service_catogory}</td>
-                  <td>{service.service_used}</td>
+                  <td>{service._id}</td>
                   <td> <button
                     className="btn btn-danger"
-                    // onClick={()=>handleDelete(service._id)}
+                    onClick={()=>handleDelete(service._id)}
                   >
                     Delete user
                   </button></td>
