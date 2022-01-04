@@ -12,8 +12,6 @@ const AllUsers = () => {
   }, []);
   const users = useSelector((state) => state?.users?.allUsers[0]);
 
-  console.log(users);
-
   return (
     <div>
       <Navigation />

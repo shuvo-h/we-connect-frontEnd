@@ -20,19 +20,20 @@ import ProviverServiceCtg from "./components/ProviverServiceCtg/ProviverServiceC
 import DashboardHome from "./components/DashboardComponents/DashboardHome/DashboardHome";
 import NotFound from "./components/NotFound/NotFound";
 import About from "./components/About/About";
+import PrivateRoute from "./components/Shared/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-            <Route path="my" element={<DashboardHome></DashboardHome>}></Route>
-            <Route path="user" element={<UserDashboard></UserDashboard>}></Route>
-            <Route path="myservice" element={<MyServices></MyServices>}></Route>
-            <Route path="admin" element={<AdminDashboard></AdminDashboard>}></Route>
-            <Route path="services/edit" element={<AllServiceDashBoard></AllServiceDashBoard>}></Route>
-            <Route path="users/edit" element={<AllUsersDashBoard></AllUsersDashBoard>}></Route>
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
+            <Route path="my" element={<PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>}></Route>
+            <Route path="user" element={<PrivateRoute><UserDashboard></UserDashboard></PrivateRoute>}></Route>
+            <Route path="myservice" element={<PrivateRoute><MyServices></MyServices></PrivateRoute>}></Route>
+            <Route path="admin" element={<PrivateRoute><AdminDashboard></AdminDashboard></PrivateRoute>}></Route>
+            <Route path="services/edit" element={<PrivateRoute><AllServiceDashBoard></AllServiceDashBoard></PrivateRoute>}></Route>
+            <Route path="users/edit" element={<PrivateRoute><AllUsersDashBoard></AllUsersDashBoard></PrivateRoute>}></Route>
           </Route>
 
           <Route path="/services/:categoryName" element={<ProviverServiceCtg></ProviverServiceCtg>}></Route>
