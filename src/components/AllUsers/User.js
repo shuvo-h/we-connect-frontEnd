@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const User = ({ user }) => {
   const { name, img, bio, category, address, area, _id } = user;
   const bioUpdated = bio.slice(0, 60);
-  console.log(user);
+  
   return (
     <div className="col-12 col-lg-4">
       <div class="card m-2 border-0 shadow">

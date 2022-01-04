@@ -13,7 +13,7 @@ const Service = ({ service }) => {
           <h5 class="card-title">{service_catogory}</h5>
           <p class="card-text">{service_details}</p>
           <p>{service_used}</p>
-          <Link to={`/services/${service_catogory}`} class="btn btn-primary">See Providers</Link>
+          <Link to={`/services/${service_catogory}`} class="btn btn-primary">All {service_catogory}</Link>
         </div>
       </div>
     </div>

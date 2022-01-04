@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SingleServiceHighLight = ({ singleService }) => {
-  const { service_banner, service_details, service_used, service_catogory } =
+  const { service_banner, service_details, service_used, service_catogory,_id } =
     singleService;
     
   return (
@@ -13,7 +13,7 @@ const SingleServiceHighLight = ({ singleService }) => {
           <h5 class="card-title">{service_catogory}</h5>
           <p class="card-text">{service_details}</p>
           <p>{service_used}</p>
-          <Link to="/all" class="btn btn-primary">
+          <Link to={`/services/${service_catogory}`} class="btn btn-primary">
             All {service_catogory}
           </Link>
         </div>
