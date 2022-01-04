@@ -19,7 +19,7 @@ const AllUsers = () => {
       <Navigation />
       <h2 className="text-center my-5">our all users</h2>
       {
-        users.length ? <div className="row container mx-auto">
+        users?.length ? <div className="row container mx-auto">
             {users?.map((user) => (
               <User user={user} key={user._id}></User>
             ))}
