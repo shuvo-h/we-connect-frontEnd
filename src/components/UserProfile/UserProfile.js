@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { fetchSingleUser } from "../../redux/slices/usersSlice";
+import Footer from "../Shared/Footer/Footer";
+import Navigation from "../Shared/Navigation/Navigation";
 import "./UserProfile.css";
 
 const UserProfile = () => {
@@ -19,43 +21,47 @@ const UserProfile = () => {
   const { user } = useAuth();
 
   return (
-    <div
-      style={{
-        marginTop: "-10px",
-      }}
-    >
+    <>
+      <Navigation />
       <div
         style={{
-          height: "200px",
+          marginTop: "-10px",
         }}
-        className="w-100 bg-secondary"
-      ></div>
-      <div className="profile-pic ms-5 text-center">
-        <img className="img-fluid h-100" src={img} alt="" />
-        <b>{name}</b>
-        <b>{user.email}</b>
+      >
+        <div
+          style={{
+            height: "200px",
+          }}
+          className="w-100 bg-secondary"
+        ></div>
+        <div className="profile-pic ms-5 text-center">
+          <img className="img-fluid h-100" src={img} alt="" />
+          <b>{name}</b>
+          <b>{user.email}</b>
+        </div>
+        <div className="row container mt-5">
+          <div className="col-md-6 col-12">
+            <p>{bio}</p>
+          </div>
+          <div className="col-md-6 col-12">
+            <p>{address}</p>
+            <p>{area}</p>
+          </div>
+          <div className="col-md-6 col-12 my-3">
+            <b>Add a review</b>
+            <br />
+            <textarea
+              className="py-2 px-3 rounded-3 border-1 w-100 mt-2"
+              type="text"
+              placeholder="add review"
+            />
+            <br />
+            <button className="btn btn-primary">Review Now</button>
+          </div>
+        </div>
       </div>
-      <div className="row container mt-5">
-        <div className="col-md-6 col-12">
-          <p>{bio}</p>
-        </div>
-        <div className="col-md-6 col-12">
-          <p>{address}</p>
-          <p>{area}</p>
-        </div>
-        <div className="col-md-6 col-12 my-3">
-          <b>Add a review</b>
-          <br />
-          <textarea
-            className="py-2 px-3 rounded-3 border-1 w-100 mt-2"
-            type="text"
-            placeholder="add review"
-          />
-          <br />
-          <button className="btn btn-primary">Review Now</button>
-        </div>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

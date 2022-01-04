@@ -15,24 +15,26 @@ const ProviverServiceCtg = () => {
   );
 
   return (
-    <div>
-      <h3 className="text-center my-5 fw-bold">These people gives this category services </h3>
-      {
-        categorizedUsers?.length ? <div className="row container">
-            {categorizedUsers?.map((ctgUser) => (
-              <CategoryServices
-                key={ctgUser._id}
-                ctgUser={ctgUser}
-              ></CategoryServices>
-            ))}
-          </div>
-        : <div className="d-flex justify-content-center my-5">
+    <div className="container">
+      <h3 className="text-center my-5 fw-bold">
+        These people gives this category services{" "}
+      </h3>
+      {categorizedUsers?.length ? (
+        <div className="row container">
+          {categorizedUsers?.map((ctgUser) => (
+            <CategoryServices
+              key={ctgUser._id}
+              ctgUser={ctgUser}
+            ></CategoryServices>
+          ))}
+        </div>
+      ) : (
+        <div className="d-flex justify-content-center my-5">
           <div class="spinner-border text-primary" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
+            <span class="visually-hidden">Loading...</span>
           </div>
-      }
-      
+        </div>
+      )}
     </div>
   );
 };
