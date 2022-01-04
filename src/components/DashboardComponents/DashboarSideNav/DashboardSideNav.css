@@ -1,0 +1,17 @@
+.dashboardList{
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.dashboardList li{
+
+margin-top: 5px;
+color: white;
+}
+.dashboardList li a{
+text-decoration: none;
+color: white;
+}
+.dashboardList li i{
+margin-right: 10px;
+}

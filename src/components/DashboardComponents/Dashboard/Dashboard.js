@@ -11,7 +11,7 @@ const Dashboard = () => {
         className={
           navOpen
             ? " dashboard-leftnav-container d-block"
-            : " dashboard-leftnav-container d-none d-md-block"
+            : " dashboard-leftnav-container d-none d-md-block bg-dark"
         }
       >
         <div>

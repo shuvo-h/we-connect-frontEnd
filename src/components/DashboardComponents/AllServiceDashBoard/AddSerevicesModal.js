@@ -90,7 +90,6 @@ const AddSerevicesModal = () => {
           </div>
         </div>
       </div>
-      ;
     </>
   );
 };
