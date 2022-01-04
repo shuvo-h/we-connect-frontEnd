@@ -18,11 +18,19 @@ const AllUsers = () => {
     <div>
       <Navigation />
       <h2 className="text-center my-5">our all users</h2>
-      <div className="row container mx-auto">
-        {users?.map((user) => (
-          <User user={user} key={user._id}></User>
-        ))}
-      </div>
+      {
+        users.length ? <div className="row container mx-auto">
+            {users?.map((user) => (
+              <User user={user} key={user._id}></User>
+            ))}
+          </div>
+        : <div className="d-flex justify-content-center my-5">
+          <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+      }
+      
       <Footer />
     </div>
   );

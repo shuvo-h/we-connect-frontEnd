@@ -1,0 +1,4 @@
+.hover:hover {
+    border-radius: 2%;
+    transform: scale(1.05);
+}

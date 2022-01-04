@@ -1,13 +1,13 @@
 import React from "react";
-
+import logo from "./../../../Assets/we_connect_logo.svg"
 const Footer = () => {
   return (
-    <div className="pt-5 pb-3 footer">
+    <div className="pt-5 pb-3 footer bg-dark">
       <div className="row mx-auto container text-lg-start text-center text-md-center text-xm-center">
         <div className="col-lg-4 col-sm-12 mx-auto">
           <img
-            className="img-fluid w-25 mb-3"
-            src="https://image.freepik.com/free-vector/technological-logo-design_1424-39.jpg"
+            className="img-fluid w-50 mb-3"
+            src={logo}
             alt=""
           />
         </div>

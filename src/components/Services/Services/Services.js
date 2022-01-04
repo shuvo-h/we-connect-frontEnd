@@ -16,11 +16,19 @@ const Services = () => {
     <div>
       <Navigation />
       <h2 className="fw-bold text-center my-4">Services we provide</h2>
-      <div className="row container mx-auto ">
-        {services?.map((service) => (
-          <Service service={service} key={service._id}></Service>
-        ))}
-      </div>
+      {
+        services?.length ? <div className="row container mx-auto ">
+            {services?.map((service) => (
+              <Service service={service} key={service._id}></Service>
+            ))}
+          </div>
+        : <div className="d-flex justify-content-center mt-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+      }
+      
       <Footer />
     </div>
   );
