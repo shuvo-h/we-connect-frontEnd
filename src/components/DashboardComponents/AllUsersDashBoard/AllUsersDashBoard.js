@@ -14,7 +14,7 @@ const AllUsersDashBoard = () => {
     const handleDelete = id =>{
         const confirm = window.confirm("Are you sure to delete this user? ");
         if (confirm) {
-            fetch(`http://localhost:5000/users/${id}`,{
+            fetch(`https://shrouded-wave-36908.herokuapp.com/users/${id}`,{
               method:"DELETE"
             })
             .then(res=>res.json())

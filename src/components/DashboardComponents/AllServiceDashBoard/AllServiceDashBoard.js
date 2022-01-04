@@ -16,7 +16,7 @@ const AllServiceDashBoard = () => {
   const handleDelete = id =>{
     const confirm = window.confirm("Are you sure to delete this service? ")
     if (confirm) {
-      fetch(`http://localhost:5000/services/${id}`,{
+      fetch(`https://shrouded-wave-36908.herokuapp.com/services/${id}`,{
         method:"DELETE"
       })
       .then(res=>res.json())

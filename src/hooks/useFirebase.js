@@ -162,7 +162,7 @@ const useFirebase = () => {
   // Save User Data
   const saveUser = (userInfo) => {
     // const user = { email, displayName, image };
-    fetch("http://localhost:5000/newuser", {
+    fetch("https://shrouded-wave-36908.herokuapp.com/newuser", {
       method: "POST",
       headers: {
         "content-type": "application/json",

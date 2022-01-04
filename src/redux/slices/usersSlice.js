@@ -8,21 +8,21 @@ const initialState = {
 
 // get all user from database 
 export const fetchUsersData = createAsyncThunk("users/fetchUsers", async()=>{
-  const response = await fetch("http://localhost:5000/users")
+  const response = await fetch("https://shrouded-wave-36908.herokuapp.com/users")
       .then(res=>res.json())
   return response;
 })
 
 // get single user from database 
 export const fetchSingleUser = createAsyncThunk("users/fetchUser", async(id)=>{
-  const response = await fetch(`http://localhost:5000/users/${id}`)
+  const response = await fetch(`https://shrouded-wave-36908.herokuapp.com/users/${id}`)
       .then(res=>res.json())
   return response;
 })
 
 // get users by category from database 
 export const fetchUsersCategory = createAsyncThunk("users/fetchCategorizedUser", async(categoryName)=>{
-  const response = await fetch(`http://localhost:5000/users/category/${categoryName}`)
+  const response = await fetch(`https://shrouded-wave-36908.herokuapp.com/users/category/${categoryName}`)
       .then(res=>res.json())
   return response;
 })

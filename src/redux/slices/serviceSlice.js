@@ -7,13 +7,13 @@ const initialState = {
 
 // all services 
 export const fetchServiceData = createAsyncThunk("services/fetchServices", async()=>{
-  const response = await fetch("http://localhost:5000/services")
+  const response = await fetch("https://shrouded-wave-36908.herokuapp.com/services")
       .then(res=>res.json())
   return response;
 })
 // setvice heighlight 
 export const fetchServiceHeighlight = createAsyncThunk("services/ServicesHeighlight", async()=>{
-  const response = await fetch("http://localhost:5000/serviceheighlight")
+  const response = await fetch("https://shrouded-wave-36908.herokuapp.com/serviceheighlight")
       .then(res=>res.json())
   return response;
 })
