@@ -13,6 +13,18 @@ const AllServiceDashBoard = () => {
 
   const services = useSelector((state) => state?.service?.allService[0]);
   console.log(services);
+  const handleDelete = id =>{
+    fetch(`http://localhost:5000/services/${id}`,{
+      method:"DELETE"
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if (data.deletedCount) {
+        alert("The service is deleted successfully!");
+        window.location.reload();
+      };
+    })
+  }
   return (
     <div>
       <AddSerevicesModal />
@@ -42,6 +54,7 @@ const AllServiceDashBoard = () => {
                   <td>{service.service_used}</td>
                   <td> <button
                     className="btn btn-danger"
+                    // onClick={()=>handleDelete(service._id)}
                   >
                     Delete user
                   </button></td>
@@ -57,3 +70,6 @@ const AllServiceDashBoard = () => {
 };
 
 export default AllServiceDashBoard;
+
+
+

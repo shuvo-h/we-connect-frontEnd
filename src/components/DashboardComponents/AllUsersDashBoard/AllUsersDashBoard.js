@@ -13,20 +13,21 @@ const AllUsersDashBoard = () => {
 
     console.log(allUsers);
 
+    const handleDelete = id =>{
+        fetch(`http://localhost:5000/users/${id}`,{
+          method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          if (data.deletedCount) {
+            alert("The User is deleted successfully!");
+            window.location.reload();
+          };
+        })
+      }
+
     return (
-        // <div>
-        //     AllUsersDashBoard
-        // {
-        //     (user=><li>{user.email} joined at {user.joined}</li>)
-        // }
-        // </div>
-
-
-
-
-
         <div>
-
             < div className="container my-order-container custom-body" >
                 <div className="text-center pb-3">
                     <h1 className="mb-5 text-center pt-5">All user <span className="text-danger"> {allUsers?.length}</span></h1>
@@ -53,6 +54,7 @@ const AllUsersDashBoard = () => {
                                 <td>{user.area}</td>
                                 <td> <button
                                     className="btn btn-danger"
+                                    onClick={()=>handleDelete(user._id)}
                                 >
                                     Delete user
                                 </button></td>
