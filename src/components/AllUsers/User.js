@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const User = ({ user }) => {
   const { name, img, bio, category, address, joined, area, _id, email } = user;
-  const bioUpdated = bio.slice(0, 60);
+  const bioUpdated = bio?.slice(0, 60);
 
   return (
     <div className="col-12 col-lg-4">
