@@ -17,8 +17,8 @@ const OurTeam = () => {
                     <div className="card h-100 hover">
                         <img src={OurTeam1} className="card-img-top img-fluid" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title">BEATRICE PRIOR</h5>
-                            <p className="card-text">Engin Expert</p>
+                            <h5 className="card-title">SHUVO HALDAR</h5>
+                            <p className="card-text">Developer</p>
                         </div>
 
                     </div>
@@ -27,8 +27,8 @@ const OurTeam = () => {
                     <div className="card h-100 hover">
                         <img src={OurTeam2} className="card-img-top img-fluid" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title">EDWARD DUGHLAS</h5>
-                            <p className="card-text">Design Expert</p>
+                            <h5 className="card-title">Hossain Ahmad Munna</h5>
+                            <p className="card-text">Developer</p>
                         </div>
 
                     </div>
@@ -37,8 +37,8 @@ const OurTeam = () => {
                     <div className="card h-100 hover">
                         <img src={OurTeam3} className="card-img-top img-fluid img-fluid" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title">PETER PARKER</h5>
-                            <p className="card-text">Technical Expert</p>
+                            <h5 className="card-title">Yeasin Rahaman</h5>
+                            <p className="card-text">Developer</p>
                         </div>
 
                     </div>
@@ -47,8 +47,8 @@ const OurTeam = () => {
                     <div className="card h-100 hover">
                         <img src={OurTeam4} className="card-img-top img-fluid img-fluid" alt="..." />
                         <div className="card-body">
-                            <h5 className="card-title">LIZA THOMAS</h5>
-                            <p className="card-text">Business Expert</p>
+                            <h5 className="card-title">Mahmudul Haque Qudrati</h5>
+                            <p className="card-text">Developer</p>
                         </div>
 
                     </div>
