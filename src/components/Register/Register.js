@@ -7,7 +7,7 @@ import "./Register.css";
 
 const Register = () => {
   const [loginData, setLoginData] = useState([]);
-  console.log(loginData);
+  
   const {
     registerUser,
     isLoading,
@@ -45,7 +45,6 @@ const Register = () => {
     const newLoginData = { ...loginData };
     newLoginData[field] = value;
 
-    // console.log(newLoginData);
     setLoginData(newLoginData);
   };
 

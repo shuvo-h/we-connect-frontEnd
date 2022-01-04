@@ -7,8 +7,8 @@ import "./Login.css";
 
 const Login = () => {
   const [loginData, setLoginData] = useState([]);
-  // const { user, loginUser, isLoading, signInWithGoogle, authLoginError, setAuthLoginError, authGoogleError, authSuccess, setAuthSuccess } = useAuth();
-
+  const location = useLocation()
+  let locationHistory = location.state?.from?.pathname || "/home";
   const {
     user,
     loginUser,
@@ -22,7 +22,6 @@ const Login = () => {
   } = useAuth();
   const [isVisible, setIsVisible] = React.useState(false);
 
-  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,7 +51,7 @@ const Login = () => {
     e.preventDefault();
     setAuthLoginError("");
     setAuthSuccess("Login Successfully!");
-    loginUser(loginData.email, loginData.password, navigate);
+    loginUser(loginData.email, loginData.password, navigate,locationHistory);
 
     e.target.reset();
   };

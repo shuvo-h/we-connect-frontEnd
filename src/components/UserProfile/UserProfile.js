@@ -19,7 +19,6 @@ const UserProfile = () => {
 
   const { img, name, address, area, bio } = userProfile;
   const { user } = useAuth();
-  console.log(userProfile);
 
   return (
     <>

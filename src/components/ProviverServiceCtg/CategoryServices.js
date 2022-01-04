@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CategoryServices = ({ ctgUser }) => {
   const { img, name, _id } = ctgUser;
-  console.log(ctgUser);
+  
   return (
     <div className="col-md-4 col-12 mb-4 rounded-3">
       <div class="card ">

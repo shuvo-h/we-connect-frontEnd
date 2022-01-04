@@ -24,8 +24,8 @@ import PrivateRoute from "./components/Shared/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
+        <AuthProvider>
         <Routes>
           <Route path="/dashboard" element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
             <Route path="my" element={<PrivateRoute><DashboardHome></DashboardHome></PrivateRoute>}></Route>
@@ -51,8 +51,8 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
         </Routes>
-      </Router>
     </AuthProvider>
+      </Router>
   );
 }
 
