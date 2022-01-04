@@ -59,9 +59,21 @@ const Navigation = () => {
                 About
               </Nav.Link>
               {user.email ? (
-                <button
-                  onClick={logOut}
-                >{`Logout(${user.displayName})`}</button>
+                <>
+                  <Nav.Link
+                    as={NavLink}
+                    to="/"
+                    className="border-0 bg-transparent pe-none"
+                  >
+                    {`${user.displayName} `}{" "}
+                  </Nav.Link>
+                  <button className="border-0 ">
+                    <i
+                      onClick={logOut}
+                      className="cursor-pointer fas fa-sign-out-alt ms-2"
+                    ></i>
+                  </button>
+                </>
               ) : (
                 <Nav.Link as={NavLink} to="/login">
                   login
