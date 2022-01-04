@@ -38,35 +38,43 @@ const AllServiceDashBoard = () => {
           <div className="text-center pb-3">
             <h1 className="mb-5 text-center pt-5">All Services <span className="text-danger"> {services?.length}</span></h1>
           </div>
+          {
+            services?.length ? <table className="table table-dark" style={{ width: "100%" }}>
+                <thead  >
+                  <tr className="bg-dark text-white mb-3 p-2" style={{ border: "1px solid red" }}>
 
-          <table className="table table-dark" style={{ width: "100%" }}>
-            <thead  >
-              <tr className="bg-dark text-white mb-3 p-2" style={{ border: "1px solid red" }}>
+                    <th >Image</th>
+                    <th >Category</th>
+                    <th >User ID</th>
+                    <th >Action</th>
+                  </tr>
+                </thead>
 
-                <th >Image</th>
-                <th >Category</th>
-                <th >User ID</th>
-                <th >Action</th>
-              </tr>
-            </thead>
+                {services?.map((service) => (
+                  < tbody >
+                    <tr role="row" style={{ border: "2px solid gray" }} >
+                      <td><img style={{ width: "70px", height: "50px" }} src={service.service_banner} alt="" /></td>
+                      <td>{service.service_catogory}</td>
+                      <td>{service._id}</td>
+                      <td> <button
+                        className="btn btn-danger"
+                        onClick={()=>handleDelete(service._id)}
+                      >
+                        Delete user
+                      </button></td>
+                    </tr>
 
-            {services?.map((service) => (
-              < tbody >
-                <tr role="row" style={{ border: "2px solid gray" }} >
-                  <td><img style={{ width: "70px", height: "50px" }} src={service.service_banner} alt="" /></td>
-                  <td>{service.service_catogory}</td>
-                  <td>{service._id}</td>
-                  <td> <button
-                    className="btn btn-danger"
-                    onClick={()=>handleDelete(service._id)}
-                  >
-                    Delete user
-                  </button></td>
-                </tr>
+                  </tbody>)
+                )}
+              </table>
+            : <div className="d-flex justify-content-center my-5">
+                  <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                  </div>
+              </div>
+          }
 
-              </tbody>)
-            )}
-          </table>
+          
         </div>
       </div>
     </div>

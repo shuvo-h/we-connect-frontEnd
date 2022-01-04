@@ -34,36 +34,44 @@ const AllUsersDashBoard = () => {
                     <h1 className="mb-5 text-center pt-5">All user <span className="text-danger"> {allUsers?.length}</span></h1>
                 </div>
 
-                <table className="table table-dark" style={{ width: "100%" }}>
-                    <thead  >
-                        <tr className="bg-dark text-white mb-3 p-2" style={{ border: "1px solid red" }}>
-                            <th >Name</th>
-                            <th >Email</th>
-                            <th >Image</th>
-                            <th >Category</th>
-                            <th >Status</th>
-                            <th >Action</th>
-                        </tr>
-                    </thead>
-                    {
-                        allUsers?.map(user => < tbody >
-                            <tr role="row" style={{ border: "2px solid gray" }} >
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td><img style={{ width: "70px", height: "50px" }} src={user.img} alt="" /></td>
-                                <td>{user.category}</td>
-                                <td>{user.area}</td>
-                                <td> <button
-                                    className="btn btn-danger"
-                                    onClick={()=>handleDelete(user._id)}
-                                >
-                                    Delete user
-                                </button></td>
-                            </tr>
+                {
+                    allUsers?.length ? <table className="table table-dark" style={{ width: "100%" }}>
+                            <thead  >
+                                <tr className="bg-dark text-white mb-3 p-2" style={{ border: "1px solid red" }}>
+                                    <th >Name</th>
+                                    <th >Email</th>
+                                    <th >Image</th>
+                                    <th >Category</th>
+                                    <th >Status</th>
+                                    <th >Action</th>
+                                </tr>
+                            </thead>
+                            {
+                                allUsers?.map(user => < tbody >
+                                    <tr role="row" style={{ border: "2px solid gray" }} >
+                                        <td>{user.name}</td>
+                                        <td>{user.email}</td>
+                                        <td><img style={{ width: "70px", height: "50px" }} src={user.img} alt="" /></td>
+                                        <td>{user.category}</td>
+                                        <td>{user.area}</td>
+                                        <td> <button
+                                            className="btn btn-danger"
+                                            onClick={()=>handleDelete(user._id)}
+                                        >
+                                            Delete user
+                                        </button></td>
+                                    </tr>
 
-                        </tbody>)
-                    }
-                </table>
+                                </tbody>)
+                            }
+                        </table>
+                    : <div className="d-flex justify-content-center my-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                }
+                
             </div >
         </div >
 
