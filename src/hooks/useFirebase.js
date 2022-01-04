@@ -9,6 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import initializeFirebase from "../Firebase/firebase.init";
 
 initializeFirebase();
@@ -34,7 +35,6 @@ const useFirebase = () => {
         setAuthSignUpError("");
         const newUser = { email, displayName: name };
         setUser(newUser);
-        console.log(userCredential);
         // Save User to the Database
         saveUser(userInfo);
         // email, name, "", "POST";
@@ -70,12 +70,12 @@ const useFirebase = () => {
 
   // login
   // Email-Password LogIn Process
-  const loginUser = (email, password, navigate) => {
+  const loginUser = (email, password, navigate,location) => {
     setIsLoading(true);
-    console.log(password, email);
+    
     signInWithEmailAndPassword(auth, email, password)
       .then((user) => {
-        navigate("/");
+        navigate(location, {replace: true});
         setAuthLoginError("");
       })
       .catch((error) => {

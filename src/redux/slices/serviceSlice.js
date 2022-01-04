@@ -25,7 +25,6 @@ export const serviceSlice = createSlice({
   reducers: {
     addService: (state,action) => {
       // state.value += 1;
-      // console.log(action.payload);
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     removeService: (state, action) => {

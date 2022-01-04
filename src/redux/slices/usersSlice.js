@@ -34,7 +34,6 @@ export const usersSlice = createSlice({
   reducers: {
     addUser: (state,action) => {
       // state.value += 1;
-      // console.log(action.payload);
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     deleteUser: (state, action) => {

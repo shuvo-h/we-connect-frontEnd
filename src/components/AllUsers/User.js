@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const User = ({ user }) => {
-  const { name, img, bio, category, address, area, _id } = user;
+  const { name, img, bio, category, address, joined, area, _id, email } = user;
   const bioUpdated = bio.slice(0, 60);
-  
+
   return (
     <div className="col-12 col-lg-4">
       <div class="card m-2 border-0 shadow">
@@ -19,6 +19,9 @@ const User = ({ user }) => {
         </div>
         <div class="card-body">
           <h5 class="card-title">{name}</h5>
+          <p className="my-1">Address: {address}</p>
+          <p className="my-1 fw-bold">Email: {email}</p>
+          <p className="mb-2">Working since: {joined}</p>
           <p class="card-text">{bioUpdated}</p>
           <div className="w-50 text-center  mx-auto">
             <p
@@ -31,8 +34,8 @@ const User = ({ user }) => {
               {category}
             </p>
           </div>
-          <p className="">{area}</p>
-          <p>{address}</p>
+          <p className="">Service area: {area}</p>
+
           <Link to={`user/${_id}`} class="btn btn-primary">
             Profile
           </Link>
